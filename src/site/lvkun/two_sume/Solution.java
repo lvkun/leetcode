@@ -1,4 +1,4 @@
-package site.lvkun.TwoSum;
+package site.lvkun.two_sume;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package site.lvkun.LongestSubstringWithoutRepeatingCharacters;
+package site.lvkun.longest_substring_without_repeating_characters;
 
 public class Solution {
     private static final int INVALID_POSITION = -1;

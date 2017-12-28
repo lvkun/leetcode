@@ -1,4 +1,4 @@
-package site.lvkun.MedianofTwoSortedArrays;
+package site.lvkun.median_of_two_sorted_arrays;
 
 public class Solution {
     public double findMedianSortedArrays(int A[], int B[]) {
