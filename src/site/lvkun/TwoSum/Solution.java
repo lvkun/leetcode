@@ -1,28 +1,28 @@
-package TwoSum;
+package site.lvkun.TwoSum;
 
 import java.util.HashMap;
+import java.util.Map;
 
 
-public class TwoSum {
+public class Solution {
     public int[] twoSum(int[] numbers, int target) {
-        HashMap map = new HashMap();
+        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+
+        int n=0, other=0;
 
         for(int i = 0; i < numbers.length; i++) {
             map.put(numbers[i], i);
-        }
 
-        int n=0, other=0;
-        for(int i = 0; i < numbers.length; i++) {
             n = i;
             int key = target - numbers[n];
 
             if (map.containsKey(key)) {
-                other = (Integer)map.get(key);
+                other = map.get(key);
                 if (n != other)
                     break;
             }
         }
 
-        return new int[]{n+1, other+1};
+        return new int[]{other+1, n+1};
     }
 }
