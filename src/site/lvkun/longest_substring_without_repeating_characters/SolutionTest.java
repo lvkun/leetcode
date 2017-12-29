@@ -2,7 +2,7 @@ package site.lvkun.longest_substring_without_repeating_characters;
 
 import junit.framework.TestCase;
 
-public class LongestSubstringWithoutRepeatingCharactersTest extends TestCase {
+public class SolutionTest extends TestCase {
 
     private int checkString(String s) {
         return Solution.lengthOfLongestSubstring(s);
