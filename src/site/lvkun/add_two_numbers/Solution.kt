@@ -58,6 +58,10 @@ class Solution {
             node2 = node2?.next
         }
 
+        if (carry != 0) {
+            cur?.next = ListNode(carry)
+        }
+
         return head
     }
 }
