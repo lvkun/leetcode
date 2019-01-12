@@ -36,7 +36,7 @@ class Solution {
         Arrays.sort(nums);
 
         List<List<Integer>> result = new ArrayList<>();
-        for(int i = 0; i < nums.length; i++) {
+        for(int i = 0; i < nums.length - 2; i++) {
             List<Integer> item = threeSum(nums, i);
             if (item != null) {
                 result.add(item);
