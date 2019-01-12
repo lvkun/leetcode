@@ -1,5 +1,8 @@
 package site.lvkun.roman_to_integer;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Roman numerals are represented by seven different symbols: I, V, X, L, C, D and M.
  *
@@ -25,7 +28,33 @@ package site.lvkun.roman_to_integer;
  * Given a roman numeral, convert it to an integer. Input is guaranteed to be within the range from 1 to 3999.
  */
 class Solution {
+    private Map<Character, Integer> romanMap = new HashMap<>();
+
+    public Solution() {
+        romanMap.put('I', 1);
+        romanMap.put('V', 5);
+        romanMap.put('X', 10);
+        romanMap.put('L', 50);
+        romanMap.put('C', 100);
+        romanMap.put('D', 500);
+        romanMap.put('M', 1000);
+    }
+
     public int romanToInt(String s) {
-        return 0;
+        int result = 0;
+        for (int i = 0; i < s.length(); i++) {
+            int number = romanMap.get(s.charAt(i));
+            int nextNumber = 0;
+            if (i + 1 < s.length()) {
+                nextNumber = romanMap.get(s.charAt(i + 1));
+            }
+            if (number < nextNumber) {
+                result -= number;
+            } else {
+                result += number;
+            }
+        }
+
+        return result;
     }
 }
