@@ -25,7 +25,11 @@ package site.lvkun.integer_to_roman;
  * Given an integer, convert it to a roman numeral. Input is guaranteed to be within the range from 1 to 3999.
  */
 class Solution {
+    private String[] thousands = {"", "M", "MM", "MMM"};
+    private String[] hundreds = {"", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"};
+    private String[] tens = {"", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
+    private String[] units = {"", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
     public String intToRoman(int num) {
-        return "";
+        return thousands[num / 1000] + hundreds[(num % 1000) / 100] + tens[(num % 100) / 10] + units[num % 10];
     }
 }
