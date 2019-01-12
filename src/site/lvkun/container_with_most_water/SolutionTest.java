@@ -1,6 +1,6 @@
 package site.lvkun.container_with_most_water;
 
-import junit.framework.Assert;
+import org.junit.Assert;
 import org.junit.Test;
 
 
