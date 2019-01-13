@@ -1,5 +1,7 @@
 package site.lvkun.add_two_numbers
 
+import site.lvkun.common.ListNode
+
 /*
 You are given two non-empty linked lists representing two non-negative integers.
 The digits are stored in reverse order and each of their nodes contain a single digit.
@@ -14,17 +16,7 @@ Output: 7 -> 0 -> 8
 Explanation: 342 + 465 = 807.
  */
 
-class ListNode(var `val`: Int = 0) {
-    var next: ListNode? = null
 
-    override fun toString(): String {
-        if (next != null) {
-            return `val`.toString() + " -> " + next
-        }
-
-        return `val`.toString()
-    }
-}
 
 class Solution {
 

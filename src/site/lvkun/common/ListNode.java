@@ -9,7 +9,7 @@ public class ListNode {
         ListNode head = null;
         ListNode cur = null;
         for (String valStr : str.split("->")) {
-            int val = Integer.parseInt(valStr);
+            int val = Integer.parseInt(valStr.trim());
             if (head == null) {
                 head = new ListNode(val);
                 cur = head;
