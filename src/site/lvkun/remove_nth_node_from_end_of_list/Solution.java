@@ -1,11 +1,8 @@
 package site.lvkun.remove_nth_node_from_end_of_list;
 
+import site.lvkun.common.ListNode;
+
 class Solution {
-    public static class ListNode {
-        int val;
-        ListNode next;
-        ListNode(int x) { val = x; }
-    }
 
     public ListNode removeNthFromEnd(ListNode head, int n) {
         ListNode end = head;
