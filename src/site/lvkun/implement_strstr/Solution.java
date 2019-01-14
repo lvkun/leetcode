@@ -1,35 +1,38 @@
 package site.lvkun.implement_strstr;
 
 class Solution {
-    private int[] nextOf(String needle) {
+    private int[] nextOf (String needle) {
         int[] next = new int[needle.length()];
-        next[0] = 0;
 
-        int k = 0;
-        for (int i = 1; i < needle.length(); i++) {
-            while (k > 0 && needle.charAt(k) != needle.charAt(i)) {
-                k = next[k-1];
+        int n = 0;
+        for (int i = 1; i < next.length; i++) {
+            while (n > 0 && needle.charAt(n) != needle.charAt(i)) {
+                n = next[n - 1];
             }
-            if (needle.charAt(k) == needle.charAt(i)) {
-                k++;
+            if (needle.charAt(n) == needle.charAt(i)) {
+                n++;
             }
-            next[i] = k;
+            next[i] = n;
         }
 
         return next;
     }
 
-    public int strStr(String haystack, String needle) {
+    public int strStr (String haystack, String needle){
+        int[] next = nextOf(needle);
+        int n = 0;
         for (int i = 0; i < haystack.length(); i++) {
-            for (int j = 0; j < needle.length(); j++) {
-                if (haystack.charAt(i + j) != needle.charAt(j)) {
-                    break;
-                }
-                if (j == needle.length() - 1) {
-                    return i;
-                }
+            while (n > 0 && haystack.charAt(i) != needle.charAt(n)) {
+                n = next[n - 1];
+            }
+            if (haystack.charAt(i) == needle.charAt(n)) {
+                n++;
+            }
+            if (n == needle.length()) {
+                return i - n + 1;
             }
         }
+
         return -1;
     }
 }
