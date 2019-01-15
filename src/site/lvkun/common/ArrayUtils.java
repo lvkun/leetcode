@@ -11,4 +11,8 @@ public class ArrayUtils {
         }
         return result;
     }
+
+    public static int[] array(int... items) {
+        return items;
+    }
 }
