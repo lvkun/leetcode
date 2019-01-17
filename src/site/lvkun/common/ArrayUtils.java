@@ -42,6 +42,7 @@ public class ArrayUtils {
     }
 
     public static void dump(char[][] matrix) {
+        System.out.println("--------------------------------");
         for (int i = 0; i < matrix.length; i++) {
             char[] row = matrix[i];
             for (int j = 0; j < row.length; j ++) {

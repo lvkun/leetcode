@@ -1,30 +1,12 @@
 package site.lvkun.valid_sudoku;
 
+import site.lvkun.common.BitSet;
+
 class Solution {
     private static final int SUDOKU_LENGTH = 9;
 
-    private static class BitSet {
-        int bit;
-
-        public void set(int i, boolean value) {
-            if (value) {
-                bit |= 1 << i;
-            } else {
-                bit &= ~(1 << i);
-            }
-        }
-
-        public boolean get(int i) {
-            return (bit & 1 << i) != 0;
-        }
-
-        public void clear() {
-            bit = 0;
-        }
-    }
-
     public int boxIndex(int row, int col) {
-        return row / 3 + (col / 3) * 3;
+        return (row / 3) * 3 + col / 3;
     }
 
     public boolean isValidSudoku(char[][] board) {

@@ -12,7 +12,8 @@ public class SolutionTest {
         Assert.assertEquals(0, solution.boxIndex(0, 0));
         Assert.assertEquals(8, solution.boxIndex(8, 8));
         Assert.assertEquals(4, solution.boxIndex(5, 5));
-        Assert.assertEquals(3, solution.boxIndex(0, 5));
+        Assert.assertEquals(1, solution.boxIndex(0, 5));
+        Assert.assertEquals(3, solution.boxIndex(4, 0));
     }
 
     @Test
