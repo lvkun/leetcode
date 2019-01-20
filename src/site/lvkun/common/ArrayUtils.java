@@ -16,7 +16,7 @@ public class ArrayUtils {
         return items;
     }
 
-    public static char[][] matrix(String str) {
+    public static char[][] matrixChar(String str) {
         str = str.replaceAll("\\[", "")
                 .replaceAll("\\]", "");
 
@@ -41,10 +41,46 @@ public class ArrayUtils {
         return result;
     }
 
+    public static int[][] matrixInt(String str) {
+        str = str.replaceAll("\\[", "")
+                .replaceAll("\\]", "");
+
+        int[][] result = null;
+        int row = 0;
+        int col = 0;
+        for (String line : str.split("\n")) {
+            if (line.length() > 0) {
+                String[] items = line.split(",");
+                if (result == null) {
+                    result = new int[items.length][items.length];
+                }
+
+                for (String item : items) {
+                    result[row][col] = Integer.parseInt(item.trim());
+                    col++;
+                }
+                col = 0;
+                row++;
+            }
+        }
+        return result;
+    }
+
     public static void dump(char[][] matrix) {
         System.out.println("--------------------------------");
         for (int i = 0; i < matrix.length; i++) {
             char[] row = matrix[i];
+            for (int j = 0; j < row.length; j ++) {
+                System.out.print(row[j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void dump(int[][] matrix) {
+        System.out.println("--------------------------------");
+        for (int i = 0; i < matrix.length; i++) {
+            int[] row = matrix[i];
             for (int j = 0; j < row.length; j ++) {
                 System.out.print(row[j] + " ");
             }

@@ -3,7 +3,7 @@ package site.lvkun.valid_sudoku;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static site.lvkun.common.ArrayUtils.matrix;
+import static site.lvkun.common.ArrayUtils.matrixChar;
 
 public class SolutionTest {
     @Test
@@ -30,7 +30,7 @@ public class SolutionTest {
                 "  [\".\",\".\",\".\",\"4\",\"1\",\"9\",\".\",\".\",\"5\"],\n" +
                 "  [\".\",\".\",\".\",\".\",\"8\",\".\",\".\",\"7\",\"9\"]\n" +
                 "]";
-        char[][] sudoku1 = matrix(example1);
+        char[][] sudoku1 = matrixChar(example1);
         Assert.assertTrue(solution.isValidSudoku(sudoku1));
 
         String example2 = "[\n" +
@@ -44,7 +44,7 @@ public class SolutionTest {
                 "  [\".\",\".\",\".\",\"4\",\"1\",\"9\",\".\",\".\",\"5\"],\n" +
                 "  [\".\",\".\",\".\",\".\",\"8\",\".\",\".\",\"7\",\"9\"]\n" +
                 "]";
-        char[][] sudoku2 = matrix(example2);
+        char[][] sudoku2 = matrixChar(example2);
         Assert.assertFalse(solution.isValidSudoku(sudoku2));
     }
 }

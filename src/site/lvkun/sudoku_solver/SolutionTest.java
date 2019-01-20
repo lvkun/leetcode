@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import static site.lvkun.common.ArrayUtils.dump;
-import static site.lvkun.common.ArrayUtils.matrix;
+import static site.lvkun.common.ArrayUtils.matrixChar;
 
 public class SolutionTest {
     private static final String example = "[\n" +
@@ -33,7 +33,7 @@ public class SolutionTest {
 
     @Test
     public void testBoard() {
-        char[][] sudoku = matrix(example);
+        char[][] sudoku = matrixChar(example);
         Solution.Board board = new Solution.Board(sudoku);
         Assert.assertFalse(board.set(0, 2, '5'));
         Assert.assertTrue(board.set(2, 3, '3'));
@@ -46,12 +46,12 @@ public class SolutionTest {
     public void testSolveSudoku() {
         Solution solution = new Solution();
 
-        char[][] sudoku = matrix(example);
+        char[][] sudoku = matrixChar(example);
         solution.solveSudoku(sudoku);
 
         dump(sudoku);
 
-        char[][] result = matrix(expected);
+        char[][] result = matrixChar(expected);
         for (int i = 0; i < 9; i++) {
             Assert.assertArrayEquals(sudoku[i], result[i]);
         }
