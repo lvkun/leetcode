@@ -20,15 +20,24 @@ public class ArrayUtils {
         str = str.replaceAll("\\[", "")
                 .replaceAll("\\]", "");
 
-        char[][] result = null;
         int row = 0;
         int col = 0;
+
+        String[] lines = str.split("\n");
+        for (String line : lines) {
+            if (line.length() > 0) {
+                row++;
+                String[] items = line.split(",");
+                col = items.length;
+            }
+        }
+        char[][] result = new char[row][col];
+
+        row = 0;
+        col = 0;
         for (String line : str.split("\n")) {
             if (line.length() > 0) {
                 String[] items = line.split(",");
-                if (result == null) {
-                    result = new char[items.length][items.length];
-                }
 
                 for (String item : items) {
                     result[row][col] = item.trim().charAt(1);
@@ -45,16 +54,24 @@ public class ArrayUtils {
         str = str.replaceAll("\\[", "")
                 .replaceAll("\\]", "");
 
-        int[][] result = null;
         int row = 0;
         int col = 0;
+
+        String[] lines = str.split("\n");
+        for (String line : lines) {
+            if (line.length() > 0) {
+                row++;
+                String[] items = line.split(",");
+                col = items.length;
+            }
+        }
+        int[][] result = new int[row][col];
+
+        row = 0;
+        col = 0;
         for (String line : str.split("\n")) {
             if (line.length() > 0) {
                 String[] items = line.split(",");
-                if (result == null) {
-                    result = new int[items.length][items.length];
-                }
-
                 for (String item : items) {
                     result[row][col] = Integer.parseInt(item.trim());
                     col++;
