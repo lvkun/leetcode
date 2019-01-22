@@ -16,6 +16,10 @@ public class ArrayUtils {
         return items;
     }
 
+    public static String[] array(String... items) {
+        return items;
+    }
+
     public static char[][] matrixChar(String str) {
         str = str.replaceAll("\\[", "")
                 .replaceAll("\\]", "");
