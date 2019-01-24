@@ -1,8 +1,8 @@
 package site.lvkun.rotate_image;
 
-import org.junit.Assert;
 import org.junit.Test;
 
+import static site.lvkun.common.ArrayUtils.assertMatrixEquals;
 import static site.lvkun.common.ArrayUtils.matrixInt;
 
 public class SolutionTest {
@@ -22,9 +22,7 @@ public class SolutionTest {
                 "  [9,6,3]\n" +
                 "]");
 
-        for (int i = 0; i < matrix.length; i++) {
-            Assert.assertArrayEquals(expected[i], matrix[i]);
-        }
+        assertMatrixEquals(expected, matrix);
 
         matrix = matrixInt("[\n" +
                 "  [ 5, 1, 9,11],\n" +
@@ -41,8 +39,6 @@ public class SolutionTest {
                 "  [16, 7,10,11]\n" +
                 "]");
 
-        for (int i = 0; i < matrix.length; i++) {
-            Assert.assertArrayEquals(expected[i], matrix[i]);
-        }
+        assertMatrixEquals(expected, matrix);
     }
 }

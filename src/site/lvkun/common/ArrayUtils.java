@@ -1,5 +1,7 @@
 package site.lvkun.common;
 
+import org.junit.Assert;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -85,6 +87,14 @@ public class ArrayUtils {
             }
         }
         return result;
+    }
+
+    public static void assertMatrixEquals(int[][] expected, int[][] result) {
+        Assert.assertEquals(expected.length, result.length);
+
+        for (int i = 0; i < expected.length; i++) {
+            Assert.assertArrayEquals(expected[i], result[i]);
+        }
     }
 
     public static void dump(char[][] matrix) {
