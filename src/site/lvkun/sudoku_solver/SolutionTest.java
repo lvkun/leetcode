@@ -39,7 +39,7 @@ public class SolutionTest {
         Assert.assertTrue(board.set(2, 3, '3'));
         Assert.assertFalse(board.set(2, 4, '3'));
         Assert.assertEquals('3', board.charAt(2, 3));
-        Assert.assertEquals('5', board.charAt(0, 2));
+        Assert.assertEquals('.', board.charAt(0, 2));
     }
 
     @Test
@@ -48,8 +48,6 @@ public class SolutionTest {
 
         char[][] sudoku = matrixChar(example);
         solution.solveSudoku(sudoku);
-
-        dump(sudoku);
 
         char[][] result = matrixChar(expected);
         for (int i = 0; i < 9; i++) {

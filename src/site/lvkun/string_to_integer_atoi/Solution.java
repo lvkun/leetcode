@@ -13,6 +13,15 @@ class Solution {
                 sign = -1;
             } else if (c >= '0' && c <= '9') {
                 int n = (c - '0');
+
+                if (result > Integer.MAX_VALUE / 10) {
+                    if (sign == 1) {
+                        return Integer.MAX_VALUE;
+                    } else {
+                        return Integer.MIN_VALUE;
+                    }
+                }
+
                 result = result * 10 + n;
             } else {
                 break;

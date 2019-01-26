@@ -3,6 +3,7 @@ package site.lvkun.sudoku_solver;
 
 import site.lvkun.common.BitSet;
 
+// TODO: retry
 class Solution {
     private static final int SUDOKU_LENGTH = 9;
     private static final char UNKNOWN = '.';
