@@ -3,7 +3,6 @@ package site.lvkun.sudoku_solver;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static site.lvkun.common.ArrayUtils.dump;
 import static site.lvkun.common.ArrayUtils.matrixChar;
 
 public class SolutionTest {

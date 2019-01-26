@@ -118,4 +118,25 @@ public class ArrayUtils {
             System.out.println();
         }
     }
+
+    public static List<List<Integer>> from(String s) {
+        s = s.replaceAll("\\[", "")
+                .replaceAll("\\]", "");
+
+        List<List<Integer>> result = new ArrayList<>();
+        for (String line : s.split("\n")) {
+            if (line.length() > 0) {
+                List<Integer> list = new ArrayList<>();
+                for (String item : line.split(",")) {
+                    String value = item.trim();
+                    if (value.length() > 0) {
+                        list.add(Integer.parseInt(value));
+                    }
+                }
+                result.add(list);
+            }
+        }
+
+        return result;
+    }
 }
