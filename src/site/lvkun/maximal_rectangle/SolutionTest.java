@@ -7,7 +7,7 @@ import static site.lvkun.common.ArrayUtils.matrixChar;
 
 public class SolutionTest {
     @Test
-    public void test() {
+    public void testMaximalRectangle() {
         Solution solution = new Solution();
 
         String matrixStr = "[\n" +
