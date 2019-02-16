@@ -31,7 +31,7 @@ class Solution {
         Range leftPreorder = preorder.subRange(preorder.start + 1,
                 preorder.start + 1 + leftInorder.size());
         Range rightPreorder = preorder.subRange(preorder.start + 1 + leftInorder.size(),
-                preorder.start + 1 + leftInorder.size() + rightInorder.size());
+                preorder.end);
 
         TreeNode node = new TreeNode(v);
         node.left = buildTree(leftPreorder, leftInorder);
