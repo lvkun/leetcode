@@ -1,6 +1,7 @@
 package site.lvkun.common;
 
-import java.util.List;
+import java.util.ArrayDeque;
+import java.util.Queue;
 import java.util.Stack;
 
 public class TreeNode {
@@ -9,12 +10,36 @@ public class TreeNode {
     public TreeNode right;
     public TreeNode(int x) { val = x; }
 
+    private static TreeNode NULL = new TreeNode(-1);
+
     @Override
     public String toString() {
         Stack<String> result = new Stack<>();
 
-        result.add(String.valueOf(val));
-        appendToList(this, result);
+        Queue<TreeNode> queue = new ArrayDeque<>();
+        queue.add(this);
+
+        while (queue.size() > 0) {
+            TreeNode node = queue.poll();
+
+            if (node != NULL) {
+                result.add(String.valueOf(node.val));
+            } else {
+                result.add("null");
+                continue;
+            }
+
+            if (node.left != null) {
+                queue.offer(node.left);
+            } else {
+                queue.offer(NULL);
+            }
+            if (node.right != null) {
+                queue.offer(node.right);
+            } else {
+                queue.offer(NULL);
+            }
+        }
 
         while (result.peek().equals("null")) {
             result.pop();
@@ -22,26 +47,4 @@ public class TreeNode {
 
         return "[" + String.join(",", result) + "]";
     }
-
-    private static void appendToList(TreeNode treeNode, List<String> result) {
-        if (treeNode == null) {
-            return;
-        }
-
-        if (treeNode.left == null) {
-            result.add("null");
-        } else {
-            result.add(String.valueOf(treeNode.left.val));
-        }
-
-        if (treeNode.right == null) {
-            result.add("null");
-        } else {
-            result.add(String.valueOf(treeNode.right.val));
-        }
-
-        appendToList(treeNode.left, result);
-        appendToList(treeNode.right, result);
-    }
-
 }
