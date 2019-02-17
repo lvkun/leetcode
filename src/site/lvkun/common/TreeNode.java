@@ -47,4 +47,32 @@ public class TreeNode {
 
         return "[" + String.join(",", result) + "]";
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+
+        if (!(obj instanceof TreeNode)) {
+            return false;
+        }
+
+        TreeNode other = (TreeNode) obj;
+        return nodeEquals(this, other);
+    }
+
+    private boolean nodeEquals(TreeNode n1, TreeNode n2) {
+        if (n1 == null && n2 == null) {
+            return true;
+        }
+
+        if (n1 != null && n2 != null) {
+            return n1.val == n2.val
+                    && nodeEquals(n1.left, n2.left)
+                    && nodeEquals(n1.right, n2.right);
+        }
+
+        return false;
+    }
 }
