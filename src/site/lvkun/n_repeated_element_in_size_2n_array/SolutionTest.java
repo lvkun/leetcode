@@ -1,0 +1,4 @@
+package site.lvkun.n_repeated_element_in_size_2n_array;
+
+public class SolutionTest {
+}
