@@ -46,7 +46,8 @@ public class ArrayUtils {
                 String[] items = line.split(",");
 
                 for (String item : items) {
-                    result[row][col] = item.trim().charAt(1);
+                    item = item.replaceAll("\"", "");
+                    result[row][col] = item.trim().charAt(0);
                     col++;
                 }
                 col = 0;
@@ -90,6 +91,14 @@ public class ArrayUtils {
     }
 
     public static void assertMatrixEquals(int[][] expected, int[][] result) {
+        Assert.assertEquals(expected.length, result.length);
+
+        for (int i = 0; i < expected.length; i++) {
+            Assert.assertArrayEquals(expected[i], result[i]);
+        }
+    }
+
+    public static void assertMatrixEquals(char[][] expected, char[][] result) {
         Assert.assertEquals(expected.length, result.length);
 
         for (int i = 0; i < expected.length; i++) {
