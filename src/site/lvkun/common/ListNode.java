@@ -37,5 +37,18 @@ public class ListNode {
         }
         return builder.toString();
     }
+
+    public ListNode find(int v) {
+        ListNode node = this;
+        while (node != null) {
+            if (node.val == v) {
+                return node;
+            }
+
+            node = node.next;
+        }
+
+        return node;
+    }
 }
 
