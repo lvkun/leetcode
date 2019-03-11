@@ -24,7 +24,8 @@ public class ArrayUtils {
 
     public static char[][] matrixChar(String str) {
         str = str.replaceAll("\\[", "")
-                .replaceAll("\\]", "");
+                .replaceAll("\\]", "")
+                .replaceAll("'", "");
 
         int row = 0;
         int col = 0;
