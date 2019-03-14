@@ -2,7 +2,6 @@ package site.lvkun.leetcode.minimum_size_subarray_sum;
 
 class Solution {
     public int minSubArrayLen(int s, int[] nums) {
-
         if (nums == null || nums.length == 0) {
             return 0;
         }
@@ -11,7 +10,6 @@ class Solution {
         int end = 0;
 
         int sum = nums[0];
-
         int minLength = nums.length + 1;
 
         while (end < nums.length) {
@@ -21,6 +19,7 @@ class Solution {
 
             while (sum >= s) {
                 minLength = Math.min(minLength, end - start);
+
                 sum -= nums[start++];
             }
         }
@@ -28,3 +27,4 @@ class Solution {
         return minLength == nums.length + 1 ? 0 : minLength;
     }
 }
+
