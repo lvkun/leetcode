@@ -1,4 +1,7 @@
 package site.lvkun.leetcode.maximal_square;
 
-public class Solution {
+class Solution {
+    public int maximalSquare(char[][] matrix) {
+        return 0;
+    }
 }
